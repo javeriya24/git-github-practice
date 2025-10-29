@@ -1,0 +1,20 @@
+name: Practice Workflow
+
+on:
+  push:
+    branches:
+      - main
+      - feature-readme-update
+
+jobs:
+  practice:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Show current branch
+        run: echo "You are working on the ${{ github.ref_name }} branch"
+
+      - name: List project files
+        run: ls -la
